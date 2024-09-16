@@ -42,7 +42,7 @@ node3.left = node4
 node3.right = node5
 
 print('PreorderTraversal of the Tree :')
-node1.PreorderTraversal(node1)
+node1.PreorderTraversal(node1)  # To call class method, we need to use instance of the class
 print('InorderTraversal of the Tree :')
 node1.InorderTraversal(node1)
 print('PostorderTraversal of the Tree :')
