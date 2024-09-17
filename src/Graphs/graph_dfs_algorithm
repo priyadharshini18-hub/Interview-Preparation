@@ -1,0 +1,24 @@
+-- Graph DFS Algorithm --
+
+N -> Number of Vertices
+E -> Edges / Link between Vertices
+Adj[[]] -> Adjacency List
+Visited[] -> To indicate if a node is visited
+
+1. Create adjacency list for every node from the edges
+2. Start DFS from any node : dfs(node)
+3. Check if the node is visited
+    3.1. If not visited -> set visited[node]
+    3.2. Print the node value
+    3.3. Loop through adj[node]
+    3.4. Call dfs()
+
+This way all the nodes in the graph will be visited.
+
+If the graph is disjoint / disconnected :
+Loop through all vertices to handle disconnected
+
+    for i in range(len(self.adj)):
+        if not visited[i]:
+              # Perform DFS from unvisited vertex
+            self.dfs_rec(visited, i)
