@@ -1,5 +1,6 @@
 # DFS in undirected Graph
 
+# Function to create adjacency list for every node and all its edges
 def add_edge(adj, s, t):
     adj[s].append(t)
     adj[t].append(s)
@@ -8,8 +9,8 @@ def dfs(node, visited, adj):
     visited[node] = 1
     print(node)
 
-    for link in adj[node] :
-        if visited[link] != 1 :
+    for link in adj[node] : # Once a node is visited, perform dfs for its adjacent nodes
+        if visited[link] != 1 : # Skip if the adjacent nodes are visited already
             dfs(link, visited, adj)
 
 # Input for Graph
