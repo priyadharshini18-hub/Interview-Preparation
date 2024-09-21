@@ -1,5 +1,10 @@
 -- Graph DFS Algorithm --
 
+Source : Any node
+Target : No target
+Constraints : Not in visited
+List of neighbours : First node from immediately connected nodes
+
 N -> Number of Vertices
 E -> Edges / Link between Vertices
 Adj[[]] -> Adjacency List

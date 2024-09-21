@@ -11,7 +11,7 @@ def dfs(node, visited, adj):
     print(node)
 
     for link in adj[node] : # Once a node is visited, perform dfs for its adjacent nodes
-        if not visited.__contains__(link) : # Skip if the adjacent nodes are visited already
+        if link not in visited : # Skip if the adjacent nodes are visited already
             dfs(link, visited, adj)
 
 # Input for Graph
