@@ -1,0 +1,21 @@
+-- Graph BFS Algorithm --
+
+Source : Any node
+Target : No target
+Constraints : Not in visited, until queue is empty
+List of neighbours : All immediately connected nodes
+
+N -> Number of Vertices
+E -> Edges / Link between Vertices
+Neighbours -> Connected nodes
+Visited -> Set to indicate if a node is visited
+
+1. Create Neighbours defaultdict() from the edges
+    - Key : Nodes , Values : Connected nodes
+2. Create a set - visited_nodes and a queue
+3. Enqueue first node to the queue, add to visited_nodes, print the value
+4. Iterate until the queue is empty
+    - Dequeue
+    - Get its neighbours
+    - Iterate through neighbours and add to queue if not in visited_nodes
+        - Add neighbour to visited_nodes
