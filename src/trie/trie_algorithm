@@ -1,0 +1,8 @@
+-- Algorithm of Trie Data structure --
+
+Create a Trienode -> value, end_flag, children
+
+
+
+
+Uses : Prefix Search
