@@ -4,7 +4,6 @@ from collections import defaultdict
 
 class TrieNode :
     def __init__(self):
-        # self.val = val
         self.children = defaultdict(TrieNode)
         self.end = False
 
@@ -12,49 +11,58 @@ class Trie :
     def __init__(self):
         self.root = TrieNode()
 
-    def add_to_trie(self, word):
+    def insertion(self, word):
         curr = self.root
         for letter in word :
-            if letter not in curr.children : # Check if the current letter is already a children
+            if letter not in curr.children :
                 curr.children[letter] = TrieNode()
             curr = curr.children[letter]
-        curr.end = True # To indicate the completion of the word
+        curr.end = True
 
-    def print_trie(self, result, ans, node):
-
-        if node.end == True :
-            result.append(ans)
-            if len(node.children) is not 0 :
-                self.print_trie(result, ans, node.children[key])
-
+    def search_word(self, word):
+        curr = self.root
+        for letter in word :
+            if letter not in curr.children :
+                print(word + ' is not found in Tire')
+                return
+            curr = curr.children[letter]
+        if curr.end == True :
+            print(word + ' is found in Tire')
         else :
-            for key in node.children.keys() :
-                ans = ans + str(key)
-                self.print_trie(result, ans, node.children[key])
+            print(word + ' is not found in Tire')
 
-    def display(self):
-        result = []
-        self.print_trie(result, '', self.root)
-        for w in result :
-            print(w)
+    def prefix_word_list(self, prefix):
+        word = ''
+        curr =  self.root
+        for letter in prefix :
+            if letter not in curr.children :
+                print('Prefix - ' + prefix + ' not found in Trie')
+                return None
+            curr = curr.children[letter]
+        print('\nPrefix wordlist :')
+        self.prefix_helper(word, curr, prefix)
 
-
-
+    def prefix_helper(self, word, curr, prefix):
+        if curr.end == True:
+            print(prefix+word)
+        for child in curr.children :
+            self.prefix_helper(word + str(child), curr.children[child], prefix)
 
 
 word_list = ['apple', 'app', 'alpha', 'application', 'bat', 'ball', 'cat', 'meow', 'mat']
 
 trie = Trie()
+for word in word_list :
+    trie.insertion(word)
 
-# Creation of Trie
-for word in word_list :yea
-    trie.add_to_trie(word)
+# Find a word in Trie
+trie.search_word('app')
+trie.search_word('priya')
 
-# Print all the words in Trie
-print('Words in Trie :')
-trie.display()
-# trie.print_trie([], '', trie.root)
+# Prefix words
+trie.prefix_word_list('app')
 
-# Find if a word is present
 
-# Print all words with prefix 'app'
+
+
+

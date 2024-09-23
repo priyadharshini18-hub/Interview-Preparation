@@ -1,8 +1,32 @@
 -- Algorithm of Trie Data structure --
 
-Create a Trienode -> value, end_flag, children
+Create a Trienode -> end_flag, children
 
+Insertion :
 
+Start with the root node
+For every letter in the word
+    If not present in node.children : Create a new Trinode and add to children[letter]
+    Else : letter is already present, skip to next
+Once all the letters are inserted, set the end_flag to True
+
+Search Word :
+
+Start with the root node
+For every letter in the word
+    If not present in node.children : return False
+    Else : letter is already present, skip to next
+Once all the letters are iterated, return end_flag
+
+Prefix Search :
+
+Start with the root node
+For every letter in the prefix
+    If not present in node.children : return False
+    Else : letter is already present, skip to next
+Once all the letters are iterated (helper function)
+    Iterate through all the children of current node and call the helper function
+    Print the word if end_flag is True
 
 
 Uses : Prefix Search
