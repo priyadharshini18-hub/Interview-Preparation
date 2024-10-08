@@ -1,0 +1,35 @@
+-- Heap implementation using Tree --
+
+-- MAX Heap --
+
+Creating the Tree :
+
+Add root to the queue
+While queue is not empty
+    Pop queue
+        If no left child -> add new node as left child
+        Else -> append left child to the queue
+        If no right child -> add new node as right child
+        Else -> append right child to the queue
+
+Build Heap :
+
+Get the intermediate nodes (non-leaf nodes)
+    Add root to the queue
+    While queue is not empty
+        Pop queue
+        If left or right child is present -> Add to intermediate_node list
+        If left child is present -> append left child to the queue
+        If right child is present -> append right child to the queue
+Start the loop from n-1 to top in intermediate_node
+    Call Heapify
+
+Heapify :
+
+If both left and right child is present
+    Check which child is greater
+    Swap with parent
+If only left child is present
+    Swap if left child is greater than parent
+If only right child is present
+    Swap if right child is greater than parent
