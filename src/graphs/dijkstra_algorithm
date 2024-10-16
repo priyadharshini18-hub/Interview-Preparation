@@ -1,0 +1,31 @@
+Dijkstra Algorithm
+
+Shortest path in positive weighted graph
+
+Prep :
+
+Convert adjacency matrix with weights into dict
+Create a dict to store the shortest distances from source - assign it to INF
+Create a Priority Queue based Heap on shortest distance - tuple(shortest distance, vertex)
+
+Algorithm :
+
+Start from source
+    - Assign the distance of source in dict to 0
+    - Add to the PQ with distance 0
+
+while PQ is not empty :
+POP the top of PQ
+Loop through all the edges from top
+    - If the weight of top + curr weight of the vertex < curr weight
+        - Update the weights in dict for the visited vertex (weight of top + curr weight of the vertex)
+            - Add the curr weight and vertex to PQ
+
+
+Shortest weight from source to destination : dict[destination]
+
+Shortest path :
+    Create another dict for storing the path
+    Update the dict[vertex] = top everytime we modify the distance dict for vertex
+
+

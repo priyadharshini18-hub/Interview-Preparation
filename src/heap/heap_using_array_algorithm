@@ -1,0 +1,20 @@
+-- Heap implementation using Array --
+
+-- MAX Heap --
+
+Left child -> 2*i + 1
+Right child -> 2*i + 2
+
+Creation :
+
+Keep appending the new values into the array
+Iterate from bottom to top (only for the internal nodes)
+    Start from n//2-1 till top in reverse
+    Call Heapify
+
+Heapify :
+
+Find the left and right children index
+Compare parent with its left and right children
+    If left or right child is greater -> SWAP with parent
+Repeat until the top
