@@ -7,14 +7,12 @@
 # There are only few cities which have fuel stations where you can fill the car to complete capacity (when you visit that vertex).
 # When you travel from one city to another you consume a unit of fuel and at the source city you start with full capacity of fuel.
 
-
 # Sample Input:
 # Roads: [[1,2],[2,3],[3,4],[4,5],[4,6],[6,7]]
 # A: 1, B: 7, capacity 'c': 4
 # fuel stations: [5]
 
-# Sample Output:
-# 7 (as shortest path is 1-2-3-4-5-4-6-7)
+# Sample Output: 7 (as shortest path is 1-2-3-4-5-4-6-7)
 
 from collections import defaultdict
 from queue import Queue
@@ -62,11 +60,6 @@ visited_nodes = set()
 
 print('BFS of the Graph :')
 bfs(1, 7, visited_nodes, neighbours, [5], 4)
-
-
-
-
-
 
 
 
