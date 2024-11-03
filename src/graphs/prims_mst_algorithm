@@ -7,11 +7,11 @@ Start from any node
 Create a visited set to store all the explored nodes
 Create a PQ (weight, node, parent)
 MST_Weight = 0
-Add starting node to visited and PQ (0, start, -1)
+Add starting node to PQ (0, start, -1)
 
 while PQ and len(visited) < n :
-    POP top of PQ
-        Check if top in visited -> yes : continue
+    POP top of PQ (gives edge with shortest weight)
+    Check if top in visited -> yes : continue
     Add top to visited
     MST_Weight = MST_Weight + top weight
     Add all the connected edges to PQ
