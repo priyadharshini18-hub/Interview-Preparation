@@ -1,0 +1,22 @@
+Find Shortest Path between 2 cities with fuel stations :
+
+Algorithm : Same as BFS with some changes
+
+1. Create Neighbours defaultdict() from the edges
+    - Key : Nodes , Values : Connected nodes
+2. Create a set - visited_nodes and a queue
+3. Enqueue (first node, fuel capacity, path[]) to the queue, add ((first node, fuel capacity) to visited_nodes
+4. Iterate until the queue is empty
+    - Dequeue (curr_node, curr_capacity, path)
+    - If curr_node is destination
+        - Print path
+    - Add curr_node to the path
+    - Get its neighbours
+        - If neighbour is fuel_station : new_cap = capacity
+        - Else : new_cap = curr_capacity - 1
+        - If new_cap > 0 and (neighbour, new_cap) not in visited : Enqueue
+
+What is different than normal BFS :
+- Queue (curr_node, curr_capacity, path) : To track the capacity and path after every level in BFS
+- Visited (curr_node, curr_capacity) : This will allow node to be visited again
+- Check new_cap > 0 and (neighbour, new_cap) not in visited : To make sure the fuel in revisited node is not same as prev visit and the car doesn't run out of fuel
