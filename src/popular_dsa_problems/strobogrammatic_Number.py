@@ -14,7 +14,7 @@
 # print('yes')
 
 rotated = {0, 1, 8, 6, 9}
-num = ['18088', '69', '111', '962', '8']
+num = ['18088', '69', '111', '962', '8', '8180']
 
 for n in num :
     left = 0
@@ -30,6 +30,10 @@ for n in num :
             break
 
         if (left_ch == 6 and right_ch != 9) or (left_ch == 9 and right_ch != 6) :
+            strobo = 1
+            break
+
+        if (left_ch in {0, 1, 8} and left_ch != right_ch) :
             strobo = 1
             break
 
